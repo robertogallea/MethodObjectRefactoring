@@ -16,7 +16,7 @@ class HugeClass
         $class = $this->actions[$method] ?? null;
 
         if (!$class) {
-            return new \Exception('Unsupported method');
+            throw new \Exception('Unsupported method');
         }
 
         return (new $class($this))->execute();
