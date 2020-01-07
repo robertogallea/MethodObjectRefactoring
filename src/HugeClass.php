@@ -6,13 +6,19 @@ namespace App;
 
 class HugeClass
 {
-    public function firstAction(): string
-    {
-        return (new FirstAction($this))->execute();
-    }
+    private $actions = [
+        'firstAction' => FirstAction::class,
+        'secondAction' => SecondAction::class
+    ];
 
-    public function secondAction(): string
+    public function __call($method, $args)
     {
-        return (new SecondAction($this))->execute();
+        $class = $this->actions[$method] ?? null;
+
+        if (!$class) {
+            return new \Exception('Unsupported method');
+        }
+
+        return (new $class($this))->execute();
     }
 }
