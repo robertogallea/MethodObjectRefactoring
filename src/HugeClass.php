@@ -8,8 +8,7 @@ class HugeClass
 {
     public function firstAction(): string
     {
-        /** suppose this method perform a lot of instructions */
-        return 'first action';
+        return (new FirstAction($this))->execute();
     }
 
     public function secondAction(): string
