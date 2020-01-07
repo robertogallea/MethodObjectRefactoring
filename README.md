@@ -1,0 +1,1 @@
+Repository for __Refactor long methods to method classes__ example described at [https://robertogallea.com/posts/development/refactor-long-methods-to-method-classes](https://robertogallea.com/posts/development/refactor-long-methods-to-method-classes)
