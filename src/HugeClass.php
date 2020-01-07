@@ -13,7 +13,6 @@ class HugeClass
 
     public function secondAction(): string
     {
-        /** suppose this method perform a lot of instructions too */
-        return 'second action';
+        return (new SecondAction($this))->execute();
     }
 }

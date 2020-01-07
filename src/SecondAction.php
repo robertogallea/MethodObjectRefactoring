@@ -4,10 +4,10 @@
 namespace App;
 
 
-class FirstAction extends HugeClassAction
+class SecondAction extends HugeClassAction
 {
     public function execute(): string
     {
-        return 'first action';
+        return 'second action';
     }
 }
